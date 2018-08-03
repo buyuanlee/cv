@@ -1,0 +1,59 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: white;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+ul{
+list-style: none;
+}
+.clearfix::after{
+    content:'';
+    display:block;
+    clear:both;
+}
+.topNavBar{
+  padding: 20px 16px;
+}
+.topNavBar>nav{
+  float: right;
+  padding-top: 7px;
+}
+.topNavBar .logo{
+  font-size: 24px;
+  font-family:'Arial Black';
+  padding: 3px 0 4px 0;
+  float: left;
+}
+.logo>.rs{
+color: #e8676b;
+margin-right: 4px;
+}
+.logo>.card{
+  color: rgba(255, 255, 255, 0.7);
+}
+/******一定要记得初始化默认设置！！！*****/
+.topNavBar>nav>ul{
+  margin: 0;
+  padding: 0;
+}
+.topNavBar>nav>ul>li{
+  float: left;
+  margin: 0 17px;
+}
+.topNavBar>nav>ul>li>a{
+  font-size: 12px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  display: block;
+}
+.topNavBar>nav>ul>li>a:hover{
+border-bottom: 3px solid #e8676b;
+}
