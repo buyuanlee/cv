@@ -1,51 +1,75 @@
-body{
+* {
   margin: 0;
   padding: 0;
-  background: black;
-  color: white;
 }
-a{
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #27292e;
+}
+
+a {
   text-decoration: none;
   color: inherit;
 }
-ul{
-list-style: none;
+
+ul {
+  list-style: none;
 }
-.clearfix::after{
-    content:'';
-    display:block;
-    clear:both;
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
-.topNavBar{
+
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.topNavBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.topNavBar_border {
   padding: 20px 16px;
 }
-.topNavBar>nav{
+
+.topNavBar nav {
   float: right;
   padding-top: 7px;
 }
-.topNavBar .logo{
+
+.topNavBar .logo {
   font-size: 24px;
-  font-family:'Arial Black';
+  font-family: 'Arial Black';
   padding: 3px 0 4px 0;
   float: left;
 }
-.logo>.rs{
-color: #e8676b;
-margin-right: 4px;
+
+.logo>.rs {
+  color: #27a79a;
+  margin-right: 4px;
 }
-.logo>.card{
+
+.logo>.card {
   color: rgba(255, 255, 255, 0.7);
 }
-/******一定要记得初始化默认设置！！！*****/
-.topNavBar>nav>ul{
-  margin: 0;
-  padding: 0;
-}
-.topNavBar>nav>ul>li{
+
+.topNavBar nav ul li {
   float: left;
   margin: 0 17px;
 }
-.topNavBar>nav>ul>li>a{
+
+.topNavBar nav ul li a {
   font-size: 12px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.7);
@@ -54,6 +78,123 @@ margin-right: 4px;
   border-bottom: 3px solid transparent;
   display: block;
 }
-.topNavBar>nav>ul>li>a:hover{
-border-bottom: 3px solid #e8676b;
+
+.topNavBar nav ul li a:hover {
+  border-bottom: 3px solid #27a79a;
+}
+
+.banner {
+  height: 530px;
+  background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-6/49797858.jpg');
+  background-position: center center;
+  background-size: cover;
+}
+
+.banner .mask {
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.cvCard {
+  max-width: 940px;
+  margin: 0 auto;
+  background-color: #35363b;
+}
+
+/****将img的src引用到外部，这样可以利用background的一些属性，较为轻松的调整图片****/
+
+.cvCard .pic>img {
+  display: block;
+  background-position: center;
+  background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-6/14585367.jpg');
+  width: 299px;
+  height: 347px;
+  background-size: cover;
+}
+
+.cvCard .welcome {
+  position: relative;
+  background-color: #27a79a;
+  color: #fff;
+  display: inline-block;
+  padding: 4px 16px;
+  border-radius: 5%;
+  margin-bottom: 25px;
+}
+
+.cvCard .welcome::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 0;
+  top: 100%;
+  left: 10%;
+  border: 10px solid transparent;
+  border-top-width: 0px;
+  border-left-color: #27a79a;
+}
+
+.cvCard .picAndTxt {
+  padding: 50px;
+  color: #d4d4d5;
+}
+
+.cvCard .pic {
+  float: left;
+}
+
+.cvCard .txt {
+  float: left;
+  margin-left: 65px;
+  width: 470px;
+}
+
+.cvCard .txt h1 {
+  margin-bottom: 4px;
+}
+
+.cvCard hr {
+  height: 0;
+  border: none;
+  border-top: 1px solid #d4d4d5;
+  margin: 20px 0;
+}
+
+.txt dl dt, .txt dl dd {
+  float: left;
+  padding: 5px;
+  0
+}
+
+.txt dl dt {
+  width: 30%;
+  color: #d4d4d5;
+}
+
+.txt dl dd {
+  width: 60%;
+  color: #84898e;
+}
+
+.cvCard .blog {
+  background: #27a79a;
+  text-align: center;
+}
+
+.cvCard .blog>a {
+  display: inline-block;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  margin: 18px;
+}
+.cvCard .blog>a:hover{
+  background: rgba(0,0,0,0.1)
+}
+.cvCard .blog svg {
+  width: 25px;
+  height: 25px;
+  margin: 11px 0;
+  fill: #27292e;
+  vertical-align: top;
 }

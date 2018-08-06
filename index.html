@@ -7,64 +7,88 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>远方不远</title>
   <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="//at.alicdn.com/t/font_779976_lh8a3mhetr.js">
+  </script>
 </head>
+
 <body>
-  <div class="topNavBar clearfix">
-    <a class="logo" href="#" alt="logo">
+  <div class="topNavBar">
+    <div class="topNavBar_border clearfix">
+      <a class="logo" href="#" alt="logo">
       <span class="rs">RS</span><span class="card">card</span>
     </a>
-    <nav>
-      <ul class="clearfix">
-        <li><a href="#">关于</a></li>
-        <li><a href="#">技能</a></li>
-        <li><a href="#">作品</a></li>
-        <li><a href="#">博客</a></li>
-        <li><a href="#">日历</a></li>
-        <li><a href="#">联系方式</a></li>
-        <li><a href="#">其他</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul class="clearfix">
+          <li><a href="#">关于</a></li>
+          <li><a href="#">技能</a></li>
+          <li><a href="#">作品</a></li>
+          <li><a href="#">博客</a></li>
+          <li><a href="#">日历</a></li>
+          <li><a href="#">联系方式</a></li>
+          <li><a href="#">其他</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <div class="banner"></div>
+  <div class="banner">
+    <div class="mask"></div>
+  </div>
   <main>
-    <div class="card">
-      <div class="picAndTxt">
+    <div class="cvCard">
+      <div class="picAndTxt clearfix">
         <div class="pic">
-          <img src="" alt="avtar">
+          <img src="" alt="">
         </div>
         <div class="txt">
           <span class="welcome">Hello</span>
           <h1>李建伟</h1>
-          <h2>前端开发工程师</h2> 
+          <p>前端开发工程师</p>
           <hr>
-          <dl>
+          <dl class="clearfix">
             <dt>出生日期</dt>
             <dd>1995</dd>
             <dt>所在城市</dt>
             <dd>杭州市</dd>
-            <dt>手机</dt>
+            <dt>WeChat</dt>
+            <dd>ecjean</dd>
+            <dt>手机号码</dt>
             <dd>17557290656</dd>
-            <dt>邮箱</dt>
+            <dt>联系邮箱</dt>
             <dd>buyuanwali@foxmail.com</dd>
-            <dt>QQ</dt>
-            <dd>152927520</dd>
           </dl>
         </div>
       </div>
-      <footer>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
-        <a href="#"><img src="#" alt="联系方式"></a>
+      <footer class="blog">
+        <a href="#">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-zhihu_circle"></use>
+        </svg>
+      </a>
+      <a href="#">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-jianshu_circle"></use>
+      </svg>
+    </a>
+    <a href="#">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-hexo"></use>
+    </svg>
+  </a>
+    <a href="#">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-github_circle"></use>
+    </svg>
+  </a>
+<a href="#">
+  <svg class="icon" aria-hidden="true">
+    <use xlink:href="#icon-weibo-circle"></use>
+</svg>
+</a>
       </footer>
     </div>
     <a href="#" class="btn">下载我的CV</a>
     <P>
-      李建伟：前端工程师<br>
-      技能：HTML/CSS/JS/JQ/Node.js/VUE/React
+      李建伟：前端工程师<br> 技能：HTML/CSS/JS/JQ/Node.js/VUE/React
     </P>
   </main>
   <section>
@@ -95,4 +119,5 @@
     </div>
   </section>
 </body>
+
 </html>
