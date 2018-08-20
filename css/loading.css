@@ -1,0 +1,55 @@
+.site_load {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ccc;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.site_load.active {
+    display: flex;
+}
+
+.loading {
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+
+.loading::after, .loading::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 1px solid #28A79A;
+    background-color: #28A79A;
+    border-radius: 50%;
+    animation: load 1.5s linear infinite;
+}
+
+.loading::after {
+    animation-delay: 0.75s;
+}
+
+@keyframes load {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+    }
+}
