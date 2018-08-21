@@ -22,6 +22,16 @@ for (let i = 0; i < liTags.length; i++) {
     }
     liTags[i].onmouseleave = function (x) {
         x.currentTarget.classList.remove('active')
-
+    }
+}
+let aTags = document.querySelectorAll('nav.meanu>ul>li>a')
+for (let i = 0; i < aTags.length; i++) {
+    aTags[i].onclick = function (x) {
+        x.preventDefault()                                 //阻止默认动作
+        let a = x.currentTarget
+        let href = a.getAttribute('href')                   //'#siteAbout'
+        let element = document.querySelector(href)      //获取id为变量href内容的元素
+        let top = element.offsetTop
+        window.scrollTo(0, top - 80)
     }
 }
