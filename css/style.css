@@ -83,12 +83,12 @@ main {
     padding-top: 7px;
 }
 
-.topNavBar nav ul li {
+.topNavBar nav > ul > li {
     float: left;
     margin: 0 17px;
 }
 
-.topNavBar nav ul li a {
+.topNavBar nav > ul > li > a {
     font-size: 12px;
     font-weight: bold;
     padding: 5px 0;
@@ -96,10 +96,28 @@ main {
     border-bottom: 3px solid transparent;
     display: block;
     transition: all 0.3s;
+    position: relative;
 }
 
-.topNavBar nav ul li a:hover {
-    border-bottom: 3px solid #27a79a;
+.topNavBar nav > ul > li > a:hover::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #27a79a;
+    height: 3px;
+    animation: meanuSlide .5s;
+}
+
+@keyframes meanuSlide {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 .banner {
