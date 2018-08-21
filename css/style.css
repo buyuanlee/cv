@@ -86,6 +86,7 @@ main {
 .topNavBar nav > ul > li {
     float: left;
     margin: 0 17px;
+    position: relative;
 }
 
 .topNavBar nav > ul > li > a {
@@ -99,7 +100,7 @@ main {
     position: relative;
 }
 
-.topNavBar nav > ul > li > a:hover::after {
+.topNavBar nav > ul > li.active > a::after {
     content: '';
     display: block;
     position: absolute;
@@ -118,6 +119,36 @@ main {
     to {
         width: 100%;
     }
+}
+
+.topNavBar .submenu {
+    right: 0;
+    top: 100%;
+    display: none;
+    position: absolute;
+    white-space: nowrap;
+    padding: 15px 20px;
+    background-color: rgba(55, 55, 55, .5);
+    border-radius: 5px;
+    line-height: 36px;
+    box-shadow: 0 3px 3px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.topNavBar li.active .submenu {
+    display: block;
+    animation: submeanuSlide .3s;
+}
+
+@keyframes submeanuSlide {
+    from {
+        margin-right: 100%;
+        opacity: .1;
+    }
+    to {
+        margin-left: 0;
+    }
+
 }
 
 .banner {

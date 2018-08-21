@@ -21,12 +21,30 @@
         <a class="logo" href="#" alt="logo">
             <span class="rs">RS</span><span class="card">card</span>
         </a>
-        <nav>
+        <nav class="meanu">
             <ul class="clearfix">
                 <li><a href="#">关于</a></li>
                 <li><a href="#">技能</a></li>
-                <li><a href="#">作品</a></li>
-                <li><a href="#">博客</a></li>
+                <li>
+                    <a href="#">作品</a>
+                    <ul class="submenu">
+                        <li><a href="#">作品一</a></li>
+                        <li><a href="#">作品二</a></li>
+                        <li><a href="#">作品三</a></li>
+                    </ul>
+                    <ul id="1"></ul>
+                    <ul id="2"></ul>
+                </li>
+
+                <li>
+                    <a href="#">博客</a>
+                    <ul class="submenu">
+                        <li><a href="#">知乎</a></li>
+                        <li><a href="#">简书</a></li>
+                        <li><a href="#">个人博客</a></li>
+                    </ul>
+
+                </li>
                 <li><a href="#">日历</a></li>
                 <li><a href="#">联系方式</a></li>
                 <li><a href="#">其他</a></li>
@@ -130,9 +148,9 @@
 <script type="text/javascript" src="./js/main.js">
 </script>
 <script>
-  setTimeout(function(){
-    site_load.classList.remove('active')
-  },1000)
+    setTimeout(function () {
+        site_load.classList.remove('active')
+    }, 1000)
 
 </script>
 </body>
