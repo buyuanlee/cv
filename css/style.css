@@ -238,13 +238,12 @@ main {
     padding: 5px;
 }
 
-.cvCard .txt dl dt {
-    width: 30%;
+.cvCard .txt dl > dt {
+    width: 50%;
     color: #d4d4d5;
 }
 
-.cvCard .txt dl dd {
-    width: 60%;
+.cvCard .txt dl > dd {
     color: #84898e;
 }
 
