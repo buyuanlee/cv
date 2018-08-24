@@ -40,6 +40,15 @@ main {
     clear: both;
 }
 
+[distance].offset {
+    transform: translateY(100px);
+}
+
+[distance].animate {
+    transform: translateY(0);
+    animation: all linear 1s;
+}
+
 .topNavBar {
     position: fixed;
     top: 0;
@@ -100,7 +109,8 @@ main {
     position: relative;
 }
 
-.topNavBar nav > ul > li.active > a::after {
+.topNavBar nav > ul > li.active > a::after,
+.topNavBar nav > ul > li.highlight > a::after {
     content: '';
     display: block;
     position: absolute;
@@ -163,7 +173,7 @@ main {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.cvCard {
+main .cvCard {
     max-width: 930px;
     margin: 0 auto;
     background-color: #35363b;
@@ -172,7 +182,7 @@ main {
 
 /****将img的src引用到外部，这样可以利用background的一些属性，较为轻松的调整图片****/
 
-.cvCard .pic > img {
+main .cvCard .pic > img {
     display: block;
     background-position: center;
     background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-6/14585367.jpg');
@@ -181,11 +191,11 @@ main {
     background-size: cover;
 }
 
-.cvCard .pic > img:hover {
+main .cvCard .pic > img:hover {
     background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-6/70742215.jpg');
 }
 
-.cvCard .welcome {
+main .cvCard .welcome {
     position: relative;
     background-color: #27a79a;
     color: #fff;
@@ -195,7 +205,7 @@ main {
     margin-bottom: 25px;
 }
 
-.cvCard .welcome::after {
+main .cvCard .welcome::after {
     position: absolute;
     display: inline-block;
     content: '';
@@ -207,52 +217,52 @@ main {
     border-left-color: #27a79a;
 }
 
-.cvCard .picAndTxt {
+main .cvCard .picAndTxt {
     padding: 50px;
     color: #d4d4d5;
 }
 
-.cvCard .pic {
+main .cvCard .pic {
     float: left;
 }
 
-.cvCard .txt {
+main .cvCard .txt {
     float: left;
     margin-left: 65px;
     width: 465px;
 }
 
-.cvCard .txt h1 {
+main .cvCard .txt h1 {
     margin-bottom: 4px;
 }
 
-.cvCard hr {
+main .cvCard hr {
     height: 0;
     border: none;
     border-top: 1px solid #d4d4d5;
     margin: 20px 0;
 }
 
-.cvCard .txt dl dt, .txt dl dd {
+main .cvCard .txt dl dt, .txt dl dd {
     float: left;
     padding: 5px;
 }
 
-.cvCard .txt dl > dt {
+main .cvCard .txt dl > dt {
     width: 50%;
     color: #d4d4d5;
 }
 
-.cvCard .txt dl > dd {
+main .cvCard .txt dl > dd {
     color: #84898e;
 }
 
-.cvCard .blog {
+main .cvCard .blog {
     background: #27a79a;
     text-align: center;
 }
 
-.cvCard .blog > a {
+main .cvCard .blog > a {
     display: inline-block;
     width: 47px;
     height: 47px;
@@ -260,11 +270,11 @@ main {
     margin: 18px;
 }
 
-.cvCard .blog > a:hover {
+main .cvCard .blog > a:hover {
     background: rgba(0, 0, 0, 0.1);
 }
 
-.cvCard .blog svg {
+main .cvCard .blog svg {
     width: 25px;
     height: 25px;
     margin: 11px 0;
@@ -272,12 +282,12 @@ main {
     vertical-align: top;
 }
 
-.downloadBorder {
+main .downloadBorder {
     text-align: center;
     margin: 30px 0;
 }
 
-.downloadLink {
+main .downloadBorder .downloadLink {
     display: inline-block;
     color: #9d9ea2;
     font-size: 16px;
@@ -287,17 +297,17 @@ main {
     margin: 5px 0;
 }
 
-.downloadLink:hover {
+main .downloadBorder .downloadLink:hover {
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.7);
     transition: box-shadow 0.3s;
 }
 
-.introBorder {
+main .introBorder {
     max-width: 930px;
     margin: 0 auto;
 }
 
-.selfIntro {
+main .introBorder .selfIntro {
     font-size: 20px;
     line-height: 40px;
     text-align: center;
@@ -306,24 +316,25 @@ main {
     letter-spacing: 2px;
 }
 
-.skills, .portfolio {
+section.skills, .portfolio {
     color: #7C7D82;
     max-width: 930px;
     margin: 66px auto;
 }
 
-.skills > h2, .portfolio > h2 {
+section.skills > h2, .portfolio > h2 {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.skillList {
+section.skills .skillList {
     background: #35363B;
     padding: 18px 50px 32px;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    overflow: hidden;
 }
 
-.skillList > li {
+section.skills .skillList > li {
     display: inline-block;
     width: 48.3%;
     position: relative;
@@ -331,13 +342,13 @@ main {
     color: #9C9C9C;
 }
 
-.skillList > li:nth-child(even) {
+section.skillList > li:nth-child(even) {
     float: right;
 }
 
 /****此处需要注意必须display为块级元素，否则无法显示****/
 
-.skillList > li::before, .skillList > li::after {
+section.skills .skillList > li::before, .skillList > li::after {
     content: '';
     display: inline-block;
     height: 5px;
@@ -345,38 +356,44 @@ main {
     top: 25px;
     left: 0;
     border-radius: 5px;
+    overflow: hidden;
 }
 
-.skillList > li::before {
+section.skills .skillList > li::before {
     width: 100%;
     background: #354D4E;
 }
 
-.skillList > li::after {
+section.skills .skillList > li::after {
     width: 90%;
     background: #27a79a;
+    transition: all 5s;
 }
 
-.portfolio {
+section.skills.offset .skillList > li::after {
+    width: 0;
+}
+
+section.portfolio {
     text-align: center;
     margin-bottom: 100px;
 }
 
-.portfolio nav {
+section.portfolio nav {
     display: inline-block;
 }
 
-.portfolio nav > ol {
+section.portfolio nav > ol {
 }
 
-.portfolio nav > ol > li {
+section.portfolio nav > ol > li {
     display: inline-block;
     vertical-align: top;
     margin: 0 5px;
     cursor: pointer;
 }
 
-.portfolio .scrollBar {
+section.portfolio .scrollBar {
     height: 5px;
     background: #fff;
     border-radius: 5px;
@@ -384,7 +401,7 @@ main {
     margin: 5px 0;
 }
 
-.portfolio .scrollBar::after {
+section.portfolio .scrollBar::after {
     content: '';
     position: absolute;
     display: inline-block;
@@ -397,27 +414,27 @@ main {
 
 /****注意此处的书写方式****/
 
-.scrollBar.state-1::after {
+section.portfolio .scrollBar.state-1::after {
     width: 25%;
     left: 0;
 }
 
-.scrollBar.state-2::after {
+section.portfolio .scrollBar.state-2::after {
     width: 25%;
     left: 25%;
 }
 
-.scrollBar.state-3::after {
+section.portfolio .scrollBar.state-3::after {
     width: 50%;
     left: 50%;
 }
 
-.works {
+section.portfolio .works {
     margin: 50px 0;
     position: relative;
 }
 
-.works a {
+section.portfolio .works a {
     display: inline-block;
     background-position: center;
     background-size: cover;
@@ -425,28 +442,28 @@ main {
     box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
-.leftWorks {
+section.portfolio .works .leftWorks {
     float: left;
 }
 
-.topWorks, .bottomWorks {
+section.portfolio .works .topWorks, .bottomWorks {
     float: right;
 }
 
-.works .leftWorks > a {
+section.portfolio .works .leftWorks > a {
     width: 606px;
     height: 606px;
     background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-7/63744423.jpg');
 }
 
-.works .topWorks > a {
+section.portfolio .works .topWorks > a {
     float: right;
     width: 293px;
     height: 293px;
     background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-7/58912044.jpg');
 }
 
-.works .bottomWorks > a {
+section.portfolio .works .bottomWorks > a {
     margin-top: 20px;
     float: right;
     width: 293px;
