@@ -41,12 +41,11 @@ main {
 }
 
 [distance].offset {
-    transform: translateY(100px);
+    transform: translateY(50px);
 }
 
-[distance].animate {
-    transform: translateY(0);
-    animation: all linear 1s;
+[distance] {
+    transition: all linear .5s;
 }
 
 .topNavBar {
