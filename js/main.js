@@ -66,19 +66,6 @@ function findNearly() {
 }
 
 
-// 作品集滚动条
-var bar = document.getElementById('portfolioBar');
-portfolioAll.onclick = function () {
-    bar.className = 'scrollBar state-1'
-}
-portfolioFrame.onclick = function () {
-    bar.className = 'scrollBar state-2'
-}
-portfolioNative.onclick = function () {
-    bar.className = 'scrollBar state-3'
-}
-
-
 /********** 设置缓动 **********/
 function animate(time) {
     requestAnimationFrame(animate);

@@ -379,94 +379,28 @@ section.portfolio {
     margin-bottom: 100px;
 }
 
-section.portfolio nav {
-    display: inline-block;
-}
-
-section.portfolio nav > ol {
-}
-
-section.portfolio nav > ol > li {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-section.portfolio .scrollBar {
-    height: 5px;
-    background: #fff;
-    border-radius: 5px;
-    position: relative;
-    margin: 5px 0;
-}
-
-section.portfolio .scrollBar::after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    height: inherit;
-    background: #27a79a;
-    border-radius: 5px;
-    transition: all 0.3s;
-    top: 0;
-}
-
-/****注意此处的书写方式****/
-
-section.portfolio .scrollBar.state-1::after {
-    width: 25%;
-    left: 0;
-}
-
-section.portfolio .scrollBar.state-2::after {
-    width: 25%;
-    left: 25%;
-}
-
-section.portfolio .scrollBar.state-3::after {
-    width: 50%;
-    left: 50%;
-}
-
 section.portfolio .works {
     margin: 50px 0;
     position: relative;
 }
 
-section.portfolio .works a {
-    display: inline-block;
-    background-position: center;
-    background-size: cover;
-    float: left;
-    box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.3);
+section.portfolio .works .swiper-container {
+    z-index: 0;
+    width: 640px;
+    height: 360px;
 }
 
-section.portfolio .works .leftWorks {
-    float: left;
+section.portfolio .works .swiper-button-prev,
+.swiper-button-next {
+    background-color: rgba(255, 255, 255, 0.25);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    right: 90%;
+    left: auto;
 }
 
-section.portfolio .works .topWorks, .bottomWorks {
-    float: right;
-}
-
-section.portfolio .works .leftWorks > a {
-    width: 606px;
-    height: 606px;
-    background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-7/63744423.jpg');
-}
-
-section.portfolio .works .topWorks > a {
-    float: right;
-    width: 293px;
-    height: 293px;
-    background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-7/58912044.jpg');
-}
-
-section.portfolio .works .bottomWorks > a {
-    margin-top: 20px;
-    float: right;
-    width: 293px;
-    height: 293px;
-    background-image: url('http://91jean.oss-cn-hangzhou.aliyuncs.com/18-8-7/79807529.jpg');
+section.portfolio .works .swiper-button-next {
+    left: 90%;
+    right: auto;
 }
