@@ -51,7 +51,7 @@
                     })
         },
         bindEvents: function () {
-            this.form.addEventListener('submit', function (event) {
+            this.form.addEventListener('submit', (event) => {
                 // 阻止刷新页面
                 event.preventDefault()
                 this.saveMessage()

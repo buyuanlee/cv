@@ -408,7 +408,6 @@ section.messageBoard {
     text-align: center;
     margin-bottom: 100px;
     color: #7C7D82;
-    overflow: scroll;
 }
 
 section.messageBoard > ol {
