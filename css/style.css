@@ -403,3 +403,23 @@ section.portfolio .works .swiper-button-next {
     left: 90%;
     right: auto;
 }
+
+section.messageBoard {
+    text-align: center;
+    margin-bottom: 100px;
+    color: #7C7D82;
+    overflow: scroll;
+}
+
+section.messageBoard > ol {
+    max-width: 800px;
+    margin: 50px auto;
+    color: #363636;
+    background-color: #ffffff;
+}
+
+section.messageBoard > ol > li {
+    padding: 16px;
+    border-bottom: 1px solid gray;
+    text-align: left;
+}

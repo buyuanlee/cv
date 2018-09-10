@@ -150,15 +150,26 @@
         <div class="swiper-button-next"></div>
     </div>
 </section>
+<section class="messageBoard">
+    <h2>留言板</h2>
+    <ol id="messageList"></ol>
+    <form action="" id="postMessageForm">
+        <input type="text" name="name" placeholder="尊姓大名">
+        <input type="text" name="content" placeholder="有何指教">
+        <input type="submit" value="提交">
+    </form>
+</section>
 <!--引用-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.js"></script>
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
 <!--模块化-->
 <script src="./js/loading.js"></script>
 <script src="./js/auto-slide-up.js"></script>
 <script src="./js/sticky-top-navbar.js"></script>
 <script src="./js/smoothly-navgation.js"></script>
 <script src="./js/secondary-menu.js"></script>
+<script src="./js/message.js"></script>
 <script src="./js/swiper.js"></script>
 </body>
 </html>
