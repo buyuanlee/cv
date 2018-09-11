@@ -1,11 +1,17 @@
 !function () {
     var view = document.querySelector('#site_load')
-    var controller = function (view) {
-        //loading动画
-        setTimeout(function () {
-            view.classList.remove('active')
-        }, 500)
+    var controller = {
+        view: null,
+        init: function (view) {
+            this.view = view
+            this.welcome()
+        },
+        welcome: function () {
+            setTimeout(() => {
+                this.view.classList.remove('active')
+            }, 500)
+        },
     }
-    controller(view)
+    controller.init(view)
 }.call()
 

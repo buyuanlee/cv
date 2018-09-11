@@ -1,27 +1,30 @@
 !function () {
     var view = document.querySelector('.works')
-    var controller = function (view) {
-        var mySwiper = new Swiper(view.querySelector('.swiper-container'), {
-            // 轮播方向和无缝
-            //direction: 'vertical',
+    var controller = {
+        view: null,
+        swiper: null,
+        swiperOptions: {
             loop: true,
-
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
-            },
-
-            // 如果需要前进后退按钮
+            pagination: {el: '.swiper-pagination'},
             navigation: {
                 nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-
-            // 如果需要滚动条
-            // scrollbar: {
-            //     el: '.swiper-scrollbar',
-            // },
-        })
+                prevEl: '.swiper-button-prev'
+            }
+        },
+        init: function (view) {
+            this.view = view
+            this.initSwiper()
+        },
+        initSwiper: function () {
+            var view = this.view
+            this.swiper = new Swiper(
+                this.view.querySelector('.swiper-container'),
+                this.swiperOptions)
+        },
     }
-    controller(view)
+    controller.init(view)
 }.call()
+
+
+
+
