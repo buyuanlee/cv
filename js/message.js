@@ -1,43 +1,16 @@
 !function () {
-    var view = document.querySelector('section.messageBoard')
+    var model = Model({resourceName: 'Message'})
 
-    var model = {
-        init: function () {
-            var APP_ID = 'iQIAWaVsjCUyV7c0NFQI1ki7-gzGzoHsz';
-            var APP_KEY = 'LgRhDl4pqwH4ic9fQXbGg8DX';
-            AV.init({appId: APP_ID, appKey: APP_KEY});
-        },
-        //获取数据
-        fetch: function () {
-            var query = new AV.Query('Message');
-            return query.find() //Promise对象
-        },
-        //保存数据
-        save: function (name, content) {
-            var Message = AV.Object.extend('Message');
-            var message = new Message()
-            return message.save({ //Promise对象
-                name: name,
-                content: content
-            })
-        },
-    }
+    var view = View('section.messageBoard')
 
-    var controller = {
-        view: null,
-        model: null,
-        messageList: null,
-        init: function (view, model) {
-            this.view = view
-            this.model = model
-
+    var controller=Controller({
+        messageList:null,
+        form:null,
+        init:function(view,controller){
             this.messageList = view.querySelector('#messageList')
             this.form = view.querySelector('#postMessageForm')
-            this.model.init()
             this.loadMessages()
-            this.bindEvents()
         },
-
         loadMessages: function () {
             this.model.fetch()
                 .then(
@@ -61,7 +34,7 @@
             let myForm = this.form
             let content = myForm.querySelector('input[name=content]').value
             let name = myForm.querySelector('input[name=name]').value
-            this.model.save(name, content)
+            this.model.save({"name":name,"content":content})
                 .then(function (object) {
                     let li = document.createElement('li')
                     li.innerText = `${object.attributes.name}:${object.attributes.content}`
@@ -71,8 +44,8 @@
                     myForm.querySelector('input[name=content]').value = ''
                 })
         }
-    }
-    controller.init(view, model)
+    })
+    controller.init(view,model)
 }.call()
 
 

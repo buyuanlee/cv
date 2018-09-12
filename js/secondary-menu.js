@@ -1,5 +1,5 @@
 !function () {
-    var view = document.querySelector("nav.meanu")
+    var view = View("nav.meanu")
     var controller = {
         view: null,
         liTags: null,
